@@ -1,0 +1,42 @@
+<section id="credits" class="py-24 bg-linear-to-b from-secondary/30 to-background">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <div class="flex items-center justify-center gap-3 mb-4">
+        <div class="w-12 h-12 relative rounded-xl bg-primary flex items-center justify-center">
+          <img class="rounded" [ngSrc]="'assets/logika/icon_logika_.png'" [alt]="'Logika'" fill>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold text-foreground">Logika Credits</h2>
+      </div>
+      <p class="mt-4 text-muted-foreground max-w-2xl mx-auto">Meet the talented team behind Logika</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (card of creditsData; track card.role) {
+        <div class="border-0 shadow-lg bg-card/80 backdrop-blur-sm hover:shadow-xl transition-shadow">
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 relative rounded-lg bg-primary/10 flex items-center justify-center">
+                <img class="rounded" [ngSrc]="card.avatar" [alt]="card.role" fill>
+              </div>
+              <h3 class="text-lg font-semibold text-foreground">{{card.role}}</h3>
+            </div>
+            <ul class="space-y-3">
+              @for (member of card.members; track member.name) {
+                <li class="flex flex-col">
+                  <span class="font-medium text-foreground">{{member.name}}</span>
+                  <span class="text-sm text-muted-foreground">{{member.title}}</span>
+                  <a [href]="member.link" target="_blank" class="underline decoration-slate-300 hover:decoration-slate-900">{{member.link}}</a>
+                </li>
+              }
+            </ul>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-muted-foreground">And everyone who supported us along the way.</p>
+      <p class="text-sm text-muted-foreground/70 mt-2">Playka Games 2025</p>
+    </div>
+  </div>
+</section>
