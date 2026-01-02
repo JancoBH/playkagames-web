@@ -24,7 +24,8 @@
                 "glob": "**/*",
                 "input": "public"
               },
-              "src/assets"
+              "src/assets",
+              "src/App-ads.txt"
             ],
             "styles": [
               "src/styles.css"
