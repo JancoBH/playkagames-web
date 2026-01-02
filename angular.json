@@ -25,6 +25,7 @@
                 "input": "public"
               },
               "src/assets",
+              "src/robots.txt",
               "src/app-ads.txt"
             ],
             "styles": [
