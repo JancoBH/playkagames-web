@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {MinigamesCarousel} from './components/minigames-carousel/minigames-carousel';
 import {NgOptimizedImage} from '@angular/common';
-import {Meta, Title} from '@angular/platform-browser';
+import {SeoService} from '../../shared/seo';
 
 @Component({
   selector: 'app-logika',
@@ -15,16 +15,6 @@ import {Meta, Title} from '@angular/platform-browser';
   styleUrl: './logika.css',
 })
 export class Logika implements OnInit {
-  constructor(private title: Title, private meta: Meta) {}
-
-  ngOnInit(): void {
-    this.title.setTitle('Logika | Puzzle Mini-Games Collection - Playka Games');
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Logika is a collection of puzzle mini-games: 10 levels per mini-game, 4–6 puzzles per level, Normal Mode and Free Mode. Play offline anytime.',
-    });
-  }
 
   features = [
     {
@@ -54,5 +44,16 @@ export class Logika implements OnInit {
       pathD: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z',
     },
   ];
+
+  constructor(private seo: SeoService) {}
+
+  ngOnInit(): void {
+    this.seo.setSeo({
+      title: 'Logika | Puzzle Mini-Games Collection - Playka Games',
+      description:
+        'Logika is a collection of puzzle mini-games: 10 levels per mini-game, 4–6 puzzles per level, Normal Mode and Free Mode. Play offline anytime.',
+      url: 'https://www.playkagames.com/logika'
+    });
+  }
 
 }

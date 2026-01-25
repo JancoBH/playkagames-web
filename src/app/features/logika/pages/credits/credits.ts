@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
+import {SeoService} from '../../../../shared/seo';
 
 type TeamMember = {
   name: string;
@@ -22,7 +23,19 @@ type TeamMember = {
   templateUrl: './credits.html',
   styleUrl: './credits.css',
 })
-export class Credits {
+export class Credits implements OnInit {
+
+  constructor(private seo: SeoService) {}
+
+  ngOnInit() {
+    this.seo.setSeo({
+      title: 'Credits - Logika | Playka Games',
+      description:
+        'Meet the people behind Logika. Discover the developer, artist, and music contributors who brought the game to life.',
+      url: 'https://www.playkagames.com/logika/credits',
+      image: 'https://www.playkagames.com/assets/og/logika-credits.jpg', // opcional
+    });
+  }
 
   team: TeamMember[] = [
     {

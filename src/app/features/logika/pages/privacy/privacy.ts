@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
-import {Meta, Title} from '@angular/platform-browser';
+import {SeoService} from '../../../../shared/seo';
 
 @Component({
   selector: 'app-privacy',
@@ -11,16 +11,13 @@ import {Meta, Title} from '@angular/platform-browser';
   styleUrl: './privacy.css',
 })
 export class Privacy implements OnInit {
-  constructor(
-    private title: Title, private meta: Meta
-  ) {}
+  constructor(private seo: SeoService) {}
 
   ngOnInit(): void {
-    this.title.setTitle('Privacy Policy - Logika | Playka Games');
-    this.meta.updateTag({
-      name: 'description',
-      content:
-        'Learn how Playka Games collects, uses, and shares information when you use Logika, including ads and optional rewarded ads.',
+    this.seo.setSeo({
+      title: 'Privacy Policy - Logika | Playka Games',
+      description: 'Read the privacy policy of Logika by Playka Games.',
+      url: 'https://www.playkagames.com/logika/privacy',
     });
   }
 

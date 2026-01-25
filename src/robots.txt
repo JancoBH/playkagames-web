@@ -1,3 +1,2 @@
 User-agent: *
-Disallow: /api/
 Sitemap: https://pokemoneros.com/sitemap.xml

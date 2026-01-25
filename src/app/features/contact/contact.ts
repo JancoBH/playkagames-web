@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import {Meta, Title} from '@angular/platform-browser';
+import {Component, OnInit} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {SeoService} from '../../shared/seo';
 
 @Component({
   selector: 'app-contact',
@@ -10,17 +10,14 @@ import {RouterLink} from '@angular/router';
   templateUrl: './contact.html',
   styleUrl: './contact.css',
 })
-export class Contact {
-  constructor(
-    private title: Title,
-    private meta: Meta
-  ) {}
+export class Contact implements OnInit {
+  constructor(private seo: SeoService) {}
 
   ngOnInit(): void {
-    this.title.setTitle('Contact - Playka Games');
-    this.meta.updateTag({
-      name: 'description',
-      content: "Get in touch with Playka Games. We'd love to hear from you!"
+    this.seo.setSeo({
+      title: 'Contact - Playka Games',
+      description: "Get in touch with Playka Games. We'd love to hear from you!",
+      url: 'https://www.playkagames.com/contact',
     });
   }
 }
