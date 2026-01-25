@@ -1,18 +1,226 @@
-<section id="credits" class="py-24 bg-linear-to-b from-secondary/30 to-background">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-12">
-      <div class="flex items-center justify-center gap-3 mb-4">
-        <div class="w-12 h-12 relative rounded-xl bg-primary flex items-center justify-center">
-          <img class="rounded" [ngSrc]="'assets/logika/icon_logika_.png'" [alt]="'Logika'" fill>
+<main class="pt-20">
+  <!-- Hero -->
+  <section class="py-16 px-6 relative overflow-hidden">
+    <div class="max-w-3xl mx-auto text-center">
+      <a
+        routerLink="/logika"
+        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Logika
+      </a>
+
+      <h1 class="text-3xl md:text-5xl font-extrabold text-foreground mb-4 flex gap-4 items-center justify-center">
+
+        <img class="rounded" [ngSrc]="'assets/logika/icon_logika_.png'" [alt]="'Logika'" width="65" height="65">
+
+        <span class="bg-gradient-to-r from-chart-3 via-accent to-primary bg-clip-text text-transparent">
+          How to Play
+        </span>
+      </h1>
+      <p class="text-lg text-muted-foreground text-pretty">
+        Everything you need to know about Logika
+      </p>
+    </div>
+  </section>
+
+  <!-- Tips -->
+  <section class="py-12 px-6 bg-card/50">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-chart-3 bg-chart-3/10 rounded-full mb-3">
+          Tips
+        </span>
+        <h2 class="text-2xl md:text-3xl font-bold text-foreground">
+          Pro Tips
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-5 rounded-xl bg-card border border-border hover:border-chart-3/30 transition-colors text-center">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-chart-3 to-chart-5 flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground text-sm mb-1">Start with Free Mode</h3>
+          <p class="text-xs text-muted-foreground">Practice the different puzzle types without time pressure before tackling Normal Mode.</p>
         </div>
-        <h2 class="text-3xl sm:text-4xl font-bold text-foreground">Logika Info</h2>
+
+        <div class="p-5 rounded-xl bg-card border border-border hover:border-chart-3/30 transition-colors text-center">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-chart-3 to-chart-5 flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground text-sm mb-1">Focus on Speed</h3>
+          <p class="text-xs text-muted-foreground">In Normal Mode, efficiency is key. Learn the patterns and solve puzzles quickly to keep progressing.</p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-card border border-border hover:border-chart-3/30 transition-colors text-center">
+          <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-chart-3 to-chart-5 flex items-center justify-center mx-auto mb-3">
+            <svg class="w-5 h-5 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="font-bold text-foreground text-sm mb-1">Take Breaks</h3>
+          <p class="text-xs text-muted-foreground">If you're stuck, take a short break. Coming back with fresh eyes often helps.</p>
+        </div>
       </div>
     </div>
+  </section>
 
-    <h1 class="text-center text-2xl my-40">Soon</h1>
+  <!-- FAQ -->
+  <section class="py-12 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="text-center mb-8">
+        <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 rounded-full mb-3">
+          FAQ
+        </span>
+        <h2 class="text-2xl md:text-3xl font-bold text-foreground">
+          Frequently Asked Questions
+        </h2>
+      </div>
 
-    <div class="mt-12 text-center">
-      <p class="text-sm text-muted-foreground/70 mt-2">Playka Games 2025</p>
+      <div class="space-y-4">
+        <!-- 1 -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            How do I play Logika?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Logika is a collection of puzzle mini-games. Each mini-game has 10 levels, and each level includes 4 to 6 puzzles.
+            Tap to interact and solve them before time runs out in Normal Mode, or take your time in Free Mode.
+          </p>
+        </div>
+
+        <!-- 2 -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            What is Normal Mode?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Normal Mode is the main challenge mode where you need to complete all puzzles before the timer runs out.
+            Completing levels in Normal Mode earns you puzzle pieces for your collection.
+          </p>
+        </div>
+
+        <!-- 3 -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            What is Free Mode?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Free Mode lets you play without time pressure. It’s perfect for practicing or relaxing.
+            It includes level-based play and a Random Mode for quick, endless sessions.
+          </p>
+        </div>
+
+        <!-- 4 -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            What is Random Mode?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Random Mode is part of Free Mode. Puzzles are generated randomly without following specific levels.
+            Great for short sessions when you just want to solve puzzles.
+          </p>
+        </div>
+
+        <!-- ✅ FIXED -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            How do I earn puzzle pieces?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            You earn <span class="font-semibold text-foreground">1 puzzle piece</span> every time you complete a level in
+            <span class="font-semibold text-foreground">Normal Mode</span>.
+            Logika includes <span class="font-semibold text-foreground">20+ collectibles</span> with
+            <span class="font-semibold text-foreground">100+ pieces</span> to collect as you progress.
+          </p>
+        </div>
+
+        <!-- ✅ FIXED -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            Do I need internet to play?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            No. You can play Logika <span class="font-semibold text-foreground">offline</span>.
+            An internet connection is only required for ads—especially
+            <span class="font-semibold text-foreground">rewarded ads</span> (optional) if you choose to watch them.
+          </p>
+        </div>
+
+        <!-- ✅ FUTURE-PROOF -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            How many puzzles are there?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Logika features <span class="font-semibold text-foreground">500+ puzzles</span> across
+            <span class="font-semibold text-foreground">10+ mini-games</span>, with more content added over time.
+            Each mini-game focuses on different skills like logic, memory, and problem-solving.
+          </p>
+        </div>
+
+        <!-- 8 -->
+        <div class="p-5 rounded-xl bg-card border border-border">
+          <h3 class="font-bold text-foreground mb-2 flex items-start gap-3">
+            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/10 text-primary text-xs font-bold flex-shrink-0">?</span>
+            Is Logika free to play?
+          </h3>
+          <p class="text-sm text-muted-foreground pl-9">
+            Yes, Logika is free to download and play. Enjoy all puzzle content without any paywalls.
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-12 px-6 bg-card/50">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-xl font-bold text-foreground mb-3">Still have questions?</h2>
+      <p class="text-muted-foreground mb-4">We’re here to help!</p>
+
+      <a
+        href="mailto:support@playkagames.com"
+        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-semibold hover:scale-105 transition-transform"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+        Contact Support
+      </a>
+    </div>
+  </section>
+
+  <!-- Back -->
+  <section class="py-10 px-6">
+    <div class="max-w-4xl mx-auto text-center">
+      <a
+        routerLink="/logika"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Logika
+      </a>
+    </div>
+  </section>
+</main>

@@ -1,1 +1,82 @@
-<p>navbar works!</p>
+<header class="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/50">
+  <nav class="mx-auto max-w-6xl px-6 py-3">
+    <div class="flex items-center justify-between">
+
+      <!-- Logo -->
+      <a
+        routerLink="/"
+        class="flex items-center gap-2 group"
+      >
+        <span class="text-lg font-bold tracking-tight text-foreground group-hover:text-primary transition-colors">
+          Playka Games
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden md:flex items-center gap-8">
+        <a
+          [routerLink]="['/']"
+          fragment="games"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Games
+        </a>
+        <a
+          [routerLink]="['/logika']"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Logika
+        </a>
+        <a
+          [routerLink]="['/contact']"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Contact
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        (click)="toggleMobileMenu()"
+        class="md:hidden p-2 text-foreground"
+        aria-label="Toggle menu"
+      >
+        @if (mobileMenuOpen) {
+          <!-- Acá podés poner tu icono X -->
+            ✕
+        } @else {
+          ☰
+        }
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    @if (mobileMenuOpen) {
+      <div class="md:hidden pt-4 pb-2 space-y-3">
+        <a
+          [routerLink]="['/']"
+          fragment="games"
+          (click)="closeMobileMenu()"
+          class="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Games
+        </a>
+        <a
+          [routerLink]="['/logika']"
+          (click)="closeMobileMenu()"
+          class="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Logika
+        </a>
+        <a
+          [routerLink]="['/contact']"
+          (click)="closeMobileMenu()"
+          class="block text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+        >
+          Contact
+        </a>
+      </div>
+    }
+  </nav>
+</header>

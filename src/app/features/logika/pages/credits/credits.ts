@@ -1,9 +1,22 @@
 import { Component } from '@angular/core';
+import {RouterLink} from '@angular/router';
 import {NgOptimizedImage} from '@angular/common';
+
+type TeamMember = {
+  name: string;
+  avatar: string;
+  role: string;
+  description: string;
+  link: string;
+  linkLabel: string;
+  gradient: string;
+  icon: 'linkedin' | 'instagram' | 'youtube';
+};
 
 @Component({
   selector: 'app-credits',
   imports: [
+    RouterLink,
     NgOptimizedImage
   ],
   templateUrl: './credits.html',
@@ -11,28 +24,37 @@ import {NgOptimizedImage} from '@angular/common';
 })
 export class Credits {
 
-  creditsData = [
+  team: TeamMember[] = [
     {
-      role: "Development",
+      name: 'Janco Boscan',
       avatar: 'assets/logika/credits/janco.webp',
-      members: [
-        { name: "Janco Boscan", title: "Developer", link: "https://www.linkedin.com/in/jancobh/" },
-      ],
+      role: 'Developer',
+      description: 'Game development and programming',
+      link: 'https://www.linkedin.com/in/jancobh/',
+      linkLabel: 'LinkedIn',
+      gradient: 'from-primary to-chart-4',
+      icon: 'linkedin',
     },
     {
-      role: "Design",
+      name: 'JessiFabre',
       avatar: 'assets/logika/credits/Jessi.webp',
-      members: [
-        { name: "JessiFabre", title: "Art / Designer", link: "https://www.instagram.com/jessifabre_/" },
-      ],
+      role: 'Art',
+      description: 'Visual design and artwork',
+      link: 'https://www.instagram.com/jessifabre_/',
+      linkLabel: 'Instagram',
+      gradient: 'from-accent to-chart-5',
+      icon: 'instagram',
     },
     {
-      role: "Music & Sound",
+      name: 'Loikan Music',
       avatar: 'assets/logika/credits/loikan.webp',
-      members: [
-        { name: "Loikan Music", title: "Composer / Sound Design", link: "https://www.youtube.com/@LoikanMusic" },
-      ],
-    }
-  ]
+      role: 'Composer / Sound Design',
+      description: 'Music and sound effects',
+      link: 'https://www.youtube.com/@LoikanMusic',
+      linkLabel: 'YouTube',
+      gradient: 'from-chart-3 to-chart-5',
+      icon: 'youtube',
+    },
+  ];
 
 }

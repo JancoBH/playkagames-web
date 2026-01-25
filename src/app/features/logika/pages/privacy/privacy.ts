@@ -1,22 +1,27 @@
-import { Component } from '@angular/core';
-import {Location} from '@angular/common';
+import {Component, OnInit} from '@angular/core';
+import {RouterLink} from '@angular/router';
+import {Meta, Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-privacy',
-  imports: [],
+  imports: [
+    RouterLink
+  ],
   templateUrl: './privacy.html',
   styleUrl: './privacy.css',
 })
-export class Privacy {
-  constructor(private location: Location) {}
+export class Privacy implements OnInit {
+  constructor(
+    private title: Title, private meta: Meta
+  ) {}
 
-  scrollTo(id: string): void {
-    const el = document.getElementById(id);
-    if (!el) return;
-
-    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    // Actualiza el hash sin recargar ni romper el router:
-    this.location.replaceState(this.location.path(false).split('#')[0] + `#${id}`);
+  ngOnInit(): void {
+    this.title.setTitle('Privacy Policy - Logika | Playka Games');
+    this.meta.updateTag({
+      name: 'description',
+      content:
+        'Learn how Playka Games collects, uses, and shares information when you use Logika, including ads and optional rewarded ads.',
+    });
   }
+
 }
