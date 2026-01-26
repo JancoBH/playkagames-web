@@ -12,7 +12,7 @@
     <section class="relative">
       <div class="relative h-64 md:h-80 overflow-hidden">
         @if (p.image) {
-          <img [ngSrc]="p.image" [alt]="p.title" class="absolute inset-0 w-full h-full object-cover" fill/>
+          <img [ngSrc]="p.image" [alt]="p.title" class="absolute inset-0 w-full h-full object-cover" fill priority/>
         }
         <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
       </div>

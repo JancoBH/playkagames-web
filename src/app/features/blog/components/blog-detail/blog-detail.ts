@@ -72,6 +72,26 @@ export class BlogDetail {
       // 3) normalizar saltos de línea (evita “tod pegado”)
       const normalized = md.replace(/\r\n/g, '\n').trim();
 
+      const renderer = new marked.Renderer();
+
+      // Esto intercepta todas las imágenes del markdown
+      renderer.image = ({ href, text }) => {
+        const alt = text || '';
+        return `
+        <img
+          src="${href}"
+          alt="${alt}"
+          loading="lazy"
+          decoding="async"
+          class="rounded-lg"
+        />
+      `;
+      };
+
+      marked.setOptions({
+        renderer,
+      });
+
       // 4) parsear markdown a HTML
       const html = marked.parse(normalized);
 
