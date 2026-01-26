@@ -1,0 +1,141 @@
+<main class="pt-20">
+  <!-- Hero Section -->
+  <section class="py-12 px-6 relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute top-10 left-10 w-72 h-72 bg-primary/15 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-10 right-10 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <div class="max-w-5xl mx-auto text-center">
+      <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 rounded-full mb-4">
+        Blog
+      </span>
+
+      <h1 class="text-3xl md:text-5xl font-extrabold text-foreground mb-4">
+        News &amp; Updates
+      </h1>
+
+      <p class="text-muted-foreground max-w-xl mx-auto">
+        Stay up to date with the latest news about our games, development updates, tips, and more.
+      </p>
+    </div>
+  </section>
+
+  <!-- Recent Posts -->
+  <section class="px-6 pb-10 pt-10">
+    <div class="max-w-5xl mx-auto">
+      <div class="flex items-end justify-between gap-4 mb-5">
+        <h2 class="text-lg font-bold text-foreground">
+          Recent Posts
+        </h2>
+
+        @if (totalPosts() > 0) {
+          <p class="text-xs text-muted-foreground">
+            Showing {{ startIndex() + 1 }}–{{ endIndex() }} of {{ totalPosts() }}
+          </p>
+        }
+
+      </div>
+
+      @if (pagedPosts().length) {
+
+        <div class="grid gap-4">
+          @for (post of pagedPosts(); track post.slug) {
+            <a [routerLink]="['/blog', post.slug]"
+              class="group flex flex-col sm:flex-row gap-4 p-4 rounded-xl border border-border bg-card hover:border-primary/50 transition-all"
+            >
+              <div class="relative w-full sm:w-40 h-32 sm:h-24 rounded-lg overflow-hidden bg-gradient-to-br from-primary/20 to-accent/20 flex-shrink-0">
+                <!-- Imagen: si no hay, placeholder -->
+                <img
+                  [src]="post.image || '/assets/og/playka-promo.jpg'"
+                  [alt]="post.title"
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+
+              <div class="flex-1 min-w-0">
+                <div class="flex items-center gap-2 mb-1.5">
+              <span class="px-2 py-0.5 text-xs font-medium rounded-full bg-secondary text-muted-foreground">
+                {{ post.category || 'Blog' }}
+              </span>
+                  <span class="text-xs text-muted-foreground">
+                {{ formatDate(post.date) }}
+              </span>
+                </div>
+
+                <h3 class="text-base font-bold text-foreground group-hover:text-primary transition-colors mb-1">
+                  {{ post.title }}
+                </h3>
+
+                <p class="text-sm text-muted-foreground line-clamp-2">
+                  {{ post.excerpt || post.description }}
+                </p>
+              </div>
+            </a>
+          }
+        </div>
+
+      } @else {
+
+        <div class="p-6 rounded-xl bg-card border border-border text-center">
+          <p class="text-sm text-muted-foreground">No posts yet. Coming soon.</p>
+        </div>
+
+      }
+
+      <!-- Paginator -->
+      @if (totalPages() > 1) {
+        <div class="mt-8 flex items-center justify-center gap-2">
+          <button
+            type="button"
+            (click)="prevPage()"
+            [disabled]="page() === 1"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
+                 bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+            Prev
+          </button>
+
+          <div class="px-3 py-2 rounded-full border border-border bg-card text-xs text-muted-foreground">
+            Page <span class="text-foreground font-semibold">{{ page() }}</span> / {{ totalPages() }}
+          </div>
+
+          <button
+            type="button"
+            (click)="nextPage()"
+            [disabled]="page() === totalPages()"
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
+                 bg-secondary text-foreground hover:bg-primary hover:text-primary-foreground transition-colors
+                 disabled:opacity-50 disabled:cursor-not-allowed"
+          >
+            Next
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+      }
+    </div>
+  </section>
+
+  <!-- Back Link (esto sí lo dejé porque estaba en tu template; si ya lo tenés en router, borralo) -->
+  <section class="py-8 px-6 bg-card/30">
+    <div class="max-w-5xl mx-auto text-center">
+      <a
+        routerLink="/"
+        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+        Back to Home
+      </a>
+    </div>
+  </section>
+</main>

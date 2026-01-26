@@ -1,0 +1,62 @@
+@if (loading()) {
+  <div class="max-w-3xl mx-auto px-6 py-16 text-center text-muted-foreground">
+    Loading post...
+  </div>
+} @else if (errorMsg()) {
+  <div class="max-w-3xl mx-auto px-6 py-16 text-center">
+    <p class="text-destructive font-semibold">{{ errorMsg() }}</p>
+    <a routerLink="/blog" class="underline text-muted-foreground hover:text-foreground">Back to Blog</a>
+  </div>
+} @else if (post(); as p) {
+  <main class="pt-20">
+    <section class="relative">
+      <div class="relative h-64 md:h-80 overflow-hidden">
+        @if (p.image) {
+          <img [ngSrc]="p.image" [alt]="p.title" class="absolute inset-0 w-full h-full object-cover" fill/>
+        }
+        <div class="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent"></div>
+      </div>
+
+      <div class="max-w-3xl mx-auto px-6 -mt-20 relative">
+        <span
+          class="inline-block px-3 py-1 text-xs font-bold rounded-full mb-4"
+          [ngClass]="getCategoryColor(p.category)"
+        >
+          {{ p.category }}
+        </span>
+
+        <h1 class="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+          {{ p.title }}
+        </h1>
+
+        <p class="text-muted-foreground">
+          {{ formatDate(p.date) }}
+        </p>
+      </div>
+    </section>
+
+    <section class="py-12 px-6">
+      <article
+        class="max-w-3xl mx-auto prose prose-invert prose-lg
+               prose-headings:text-foreground
+               prose-p:text-muted-foreground
+               prose-strong:text-foreground
+               prose-ul:text-muted-foreground
+               prose-li:marker:text-primary"
+        [innerHTML]="p.content"
+      ></article>
+    </section>
+
+    <section class="py-10 px-6 bg-card/30">
+      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a routerLink="/blog" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+          ← All Posts
+        </a>
+
+        <a routerLink="/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+          Home
+        </a>
+      </div>
+    </section>
+  </main>
+}
