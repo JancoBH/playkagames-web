@@ -1,6 +1,6 @@
-<main class="pt-20">
+<main class="page-main">
   <!-- Hero Section -->
-  <section class="py-16 px-6 relative overflow-hidden">
+  <section class="section-shell-lg relative overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-10 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl"></div>
       <div class="absolute bottom-10 right-10 w-80 h-80 bg-chart-4/15 rounded-full blur-3xl"></div>
@@ -67,8 +67,8 @@
   </section>
 
   <!-- What is Logika -->
-  <section class="py-12 px-6 bg-card/50">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="section-shell bg-card/50">
+    <div class="content-4xl text-center">
       <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">What is Logika?</h2>
       <p class="text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed mb-6">
         Logika brings together a variety of puzzle mini-games designed to challenge
@@ -84,8 +84,8 @@
   </section>
 
   <!-- Game Modes -->
-  <section class="py-12 px-6">
-    <div class="max-w-4xl mx-auto">
+  <section class="section-shell">
+    <div class="content-4xl">
       <div class="text-center mb-8">
         <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 rounded-full mb-3">
           Game Modes
@@ -177,8 +177,8 @@
   <app-minigames-carousel />
 
   <!-- Features -->
-  <section class="py-12 px-6 bg-secondary/30">
-    <div class="max-w-4xl mx-auto">
+  <section class="section-shell bg-secondary/30">
+    <div class="content-4xl">
       <div class="text-center mb-8">
         <span class="inline-block px-3 py-1 text-xs font-bold uppercase tracking-wider text-chart-3 bg-chart-3/10 rounded-full mb-3">
           Features
@@ -188,7 +188,7 @@
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
         @for (feature of features; track feature.title) {
-          <div class="p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors text-center">
+          <div class="surface-card p-4 text-center transition-colors hover:border-primary/30">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2"
                  [class]="'w-10 h-10 rounded-lg flex items-center justify-center mx-auto mb-2 bg-gradient-to-br ' + feature.gradient">
               <svg class="w-5 h-5 text-background" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,12 +209,12 @@
   </section>
 
   <!-- Download CTA -->
-  <section class="py-16 px-6 relative overflow-hidden">
+  <section class="section-shell-lg relative overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute inset-0 bg-gradient-to-r from-primary/10 via-accent/10 to-chart-3/10"></div>
     </div>
 
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="content-3xl-center">
       <h2 class="text-2xl md:text-3xl font-bold text-foreground mb-4">Ready to Challenge Your Mind?</h2>
       <p class="text-muted-foreground mb-8">Download Logika now and start your puzzle journey!</p>
 
@@ -250,8 +250,8 @@
   </section>
 
   <!-- Learn More -->
-  <section class="py-12 px-6 bg-card/50">
-    <div class="max-w-3xl mx-auto">
+  <section class="section-shell bg-card/50">
+    <div class="content-3xl">
       <div class="text-center mb-6">
         <h2 class="text-xl font-bold text-foreground">
           Learn More
@@ -262,7 +262,7 @@
         <a
           routerLink="/logika/info"
           aria-label="Read how to play Logika"
-          class="p-5 rounded-xl bg-card border border-border hover:border-accent/50 transition-colors group"
+          class="surface-card p-5 transition-colors hover:border-accent/50 group"
         >
         <div class="flex items-center gap-4">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-chart-5 flex items-center justify-center flex-shrink-0">
@@ -283,7 +283,7 @@
         <a
           routerLink="/logika/credits"
           aria-label="View Logika credits and team"
-          class="p-5 rounded-xl bg-card border border-border hover:border-primary/50 transition-colors group"
+          class="surface-card p-5 transition-colors hover:border-primary/50 group"
         >
           <div class="flex items-center gap-4">
             <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-chart-4 flex items-center justify-center flex-shrink-0">
@@ -305,12 +305,12 @@
   </section>
 
   <!-- Back Link -->
-  <section class="py-10 px-6 bg-card/30">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="bg-card/30 px-6 py-10">
+    <div class="content-4xl text-center">
       <a
         routerLink="/"
         aria-label="Go back to Playka Games home"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+        class="back-link"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>

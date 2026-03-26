@@ -1,16 +1,16 @@
-<main class="pt-20">
+<main class="page-main">
   <!-- Hero Section -->
-  <section class="py-16 px-6 relative overflow-hidden">
+  <section class="section-shell-lg relative overflow-hidden">
     <div class="absolute inset-0 -z-10">
       <div class="absolute top-10 left-1/4 w-72 h-72 bg-primary/15 rounded-full blur-3xl"></div>
       <div class="absolute bottom-10 right-1/4 w-80 h-80 bg-accent/15 rounded-full blur-3xl"></div>
     </div>
 
-    <div class="max-w-3xl mx-auto text-center">
+    <div class="content-3xl-center">
       <a
         routerLink="/logika"
         aria-label="Go back to the Logika page"
-        class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
+        class="text-link-inline mb-6"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
@@ -33,11 +33,11 @@
   </section>
 
   <!-- Team Section -->
-  <section class="py-12 px-6">
-    <div class="max-w-3xl mx-auto">
+  <section class="section-shell">
+    <div class="content-3xl">
       <div class="grid gap-5">
         @for (member of team; track member.name) {
-          <div class="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-colors">
+          <div class="surface-card-lg p-6 transition-colors hover:border-primary/30">
             <div class="flex flex-col sm:flex-row sm:items-center gap-4">
               <div
                 class="w-14 h-14 rounded-xl relative bg-gradient-to-br flex items-center justify-center flex-shrink-0"
@@ -84,8 +84,8 @@
   </section>
 
   <!-- Thank You Section -->
-  <section class="py-12 px-6 bg-card/50">
-    <div class="max-w-3xl mx-auto text-center">
+  <section class="section-shell bg-card/50">
+    <div class="content-3xl-center">
       <p class="text-muted-foreground text-pretty">
         And everyone who supported the project along the way.
       </p>
@@ -93,12 +93,12 @@
   </section>
 
   <!-- Back Link -->
-  <section class="py-10 px-6">
-    <div class="max-w-4xl mx-auto text-center">
+  <section class="px-6 py-10">
+    <div class="content-4xl text-center">
       <a
         routerLink="/logika"
         aria-label="Go back to the Logika page"
-        class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
+        class="back-link"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>

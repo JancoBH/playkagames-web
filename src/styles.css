@@ -76,8 +76,8 @@
 }
 
 @theme inline {
-  --font-sans: 'Geist', 'Geist Fallback';
-  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --font-sans: 'Geist', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -130,6 +130,54 @@ html {
 }
 
 @layer components {
+  .page-main {
+    @apply pt-20;
+  }
+
+  .section-shell {
+    @apply px-6 py-12;
+  }
+
+  .section-shell-lg {
+    @apply px-6 py-16;
+  }
+
+  .content-3xl {
+    @apply mx-auto max-w-3xl;
+  }
+
+  .content-3xl-center {
+    @apply mx-auto max-w-3xl text-center;
+  }
+
+  .content-4xl {
+    @apply mx-auto max-w-4xl;
+  }
+
+  .content-5xl {
+    @apply mx-auto max-w-5xl;
+  }
+
+  .surface-card {
+    @apply rounded-xl border border-border bg-card;
+  }
+
+  .surface-card-muted {
+    @apply rounded-xl border border-border bg-card/50;
+  }
+
+  .surface-card-lg {
+    @apply rounded-2xl border border-border bg-card;
+  }
+
+  .back-link {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground;
+  }
+
+  .text-link-inline {
+    @apply inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground;
+  }
+
   .policy-page {
     @apply bg-background text-foreground pt-20;
   }

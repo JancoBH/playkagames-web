@@ -8,7 +8,7 @@
     <a routerLink="/blog" class="underline text-muted-foreground hover:text-foreground">Back to Blog</a>
   </div>
 } @else if (post(); as p) {
-  <main class="pt-20">
+  <main class="page-main">
     <section class="relative">
       <div class="relative h-64 md:h-80 overflow-hidden">
         @if (p.image) {
@@ -35,7 +35,7 @@
       </div>
     </section>
 
-    <section class="py-12 px-6">
+    <section class="section-shell">
       <article
         class="max-w-3xl mx-auto prose prose-invert prose-lg
                prose-headings:text-foreground
@@ -48,12 +48,12 @@
     </section>
 
     <section class="py-10 px-6 bg-card/30">
-      <div class="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a routerLink="/blog" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+      <div class="content-3xl flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <a routerLink="/blog" class="back-link">
           ← All Posts
         </a>
 
-        <a routerLink="/" class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors">
+        <a routerLink="/" class="back-link">
           Home
         </a>
       </div>
