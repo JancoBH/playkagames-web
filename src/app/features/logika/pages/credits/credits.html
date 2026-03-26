@@ -9,6 +9,7 @@
     <div class="max-w-3xl mx-auto text-center">
       <a
         routerLink="/logika"
+        aria-label="Go back to the Logika page"
         class="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors mb-6"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,6 +56,8 @@
                 [href]="member.link"
                 target="_blank"
                 rel="noopener noreferrer"
+                [attr.aria-label]="'Visit ' + member.name + ' on ' + member.linkLabel"
+                [attr.title]="'Visit ' + member.name + ' on ' + member.linkLabel"
                 class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-foreground text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 @if (member.icon === 'linkedin') {
@@ -94,6 +97,7 @@
     <div class="max-w-4xl mx-auto text-center">
       <a
         routerLink="/logika"
+        aria-label="Go back to the Logika page"
         class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-muted-foreground hover:text-foreground hover:bg-secondary transition-colors"
       >
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -50,7 +50,8 @@
         <a
           [href]="playStoreUrl"
           target="_blank"
-          aria-label="Download Logika on Google Play"
+          [attr.aria-label]="'Download ' + title + ' on Google Play'"
+          [attr.title]="'Download ' + title + ' on Google Play'"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:scale-105 transition-transform"
         >
@@ -65,6 +66,8 @@
         <a
           [href]="appStoreUrl"
           target="_blank"
+          [attr.aria-label]="'Download ' + title + ' on the App Store'"
+          [attr.title]="'Download ' + title + ' on the App Store'"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-primary text-primary-foreground text-xs font-semibold hover:scale-105 transition-transform"
         >
@@ -96,6 +99,8 @@
       @if (learnMoreUrl) {
         <a
           [routerLink]="learnMoreUrl"
+          [attr.aria-label]="'Learn more about ' + title"
+          [attr.title]="'Learn more about ' + title"
           class="inline-flex items-center gap-1 px-3 py-1.5 rounded-full border border-border text-foreground text-xs font-medium hover:bg-secondary transition-colors"
         >
           Learn More
